@@ -2,26 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+input:user-valid {
+  @apply border-grey-25;
+}
+input:focus:not(:user-invalid) {
+  @apply border-Dark-Navy;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+input:user-invalid {
+  @apply bg-warning border-Vermilon text-Vermilon;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+input:not(:user-invalid) + .warning {
+  @apply hidden;
+}
+
+input:user-invalid + .warning {
+  @apply text-sm text-Vermilon absolute right-0 top-0 w-fit font-bold leading-6;
 }
