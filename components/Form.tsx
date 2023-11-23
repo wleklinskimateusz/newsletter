@@ -1,5 +1,6 @@
 import { sendMail } from "@/actions/sendMail";
 import { Button } from "./Button";
+import { SubmitButton } from "./SubmitButton";
 
 export const Form = () => {
   return (
@@ -20,9 +21,7 @@ export const Form = () => {
         />
         <span className="warning">Valid email required</span>
       </div>
-      <Button className="w-full" type="submit">
-        Subscribe to monthly newsletter
-      </Button>
+      <SubmitButton />
     </form>
   );
 };
