@@ -13,6 +13,7 @@ export const Form = () => {
         <input
           type="email"
           required
+          id="email"
           name="email"
           placeholder="email@company.com"
           className={` w-full rounded-lg border  px-6 py-4 outline-none
